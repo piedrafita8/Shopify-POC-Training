@@ -1,8 +1,52 @@
-<h1 class="title">{{ section.settings.test - title }}</h1>
-<p class="text">Esto es un parrafo de prueba! :D</p>
+<h1 class="title"> {{section.settings.test-title}}</h1>
+<!-- <p class="text">{{section.settings}}</p> -->
 
-{% schema %} { "name": "test-file", "tag": "section", "class": "test-file",
-"settings":[ { "type": "text", "id": "test-title", "label": "Heading",
-"default": "Test Title " } ], "presets":[ { "name": "test", "settings": {
-"title": "Test" } } ] } {% endschema %} {% stylesheet %} .title, .text{ width:
-fit-content; padding-left: 50px; } {% endstylesheet %}
+{% for block in section.blocks %}
+    {% case block.type %}
+        {% when 'text' %}
+            <div class="text" {{ block.shopify_attributes }}>
+                {{block.settings.test-text}}
+            </div>
+    {% endcase %}
+{% endfor %}
+
+
+{% schema %}
+    {
+        "name": "test-file",
+        "settings": [
+            {
+                "type": "text",
+                "id": "test-title",
+                "label": "test-title"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "test-text",
+                "type": "text",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "test-text",
+                        "default": "text from section",
+                        "label": "test-text"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "test-preset"
+            }
+        ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+    .title, .text{
+        width: fit-content;
+        padding-left: 50px;
+        padding-bottom: 50px;
+    }
+{% endstylesheet %}
