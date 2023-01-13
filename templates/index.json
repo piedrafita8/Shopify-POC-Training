@@ -187,20 +187,8 @@
     },
     "test_file": {
       "type": "test-file",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Talk about your brand</p>",
-            "heading_size": "h1"
-          }
-        }
-      },
-      "block_order": ["heading"],
       "settings": {
-        "type": "text",
-        "id": "footer_linklist_title",
-        "label": "Heading"
+        "test-title": "Title from template"
       }
     }
   },

@@ -1,26 +1,8 @@
-<h1 class="title"> TEST SECTION - TITLE </h1>
+<h1 class="title">{{ section.settings.test - title }}</h1>
+<p class="text">Esto es un parrafo de prueba! :D</p>
 
-{% schema %}
-    {
-        "name": "test-file",
-        "tag": "section",
-        "class": "test-file",
-        "settings":[
-            {
-            "type": "header",
-            "content": "TEST - SCHEMA SETTINGS"
-            }
-
-        ]
-
-    }
-{% endschema %}
-
-{% stylesheet %}
-    .title{
-        width: fit-content;
-        padding-left: 50px;
-    }
-{% endstylesheet %}
-
-
+{% schema %} { "name": "test-file", "tag": "section", "class": "test-file",
+"settings":[ { "type": "text", "id": "test-title", "label": "Heading",
+"default": "Test Title " } ], "presets":[ { "name": "test", "settings": {
+"title": "Test" } } ] } {% endschema %} {% stylesheet %} .title, .text{ width:
+fit-content; padding-left: 50px; } {% endstylesheet %}
