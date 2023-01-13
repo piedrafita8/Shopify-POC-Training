@@ -189,7 +189,17 @@
       "type": "test-file",
       "settings": {
         "test-title": "Title from template"
-      }
+      },
+      "blocks": {
+        "test-text": {
+            "type": "text",
+            "settings": {
+                "test-text": "Text from template"
+            }
+
+        }
+      },
+      "block_order": ["test-text"]
     }
   },
   "order": [
