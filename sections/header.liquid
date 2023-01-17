@@ -3,12 +3,29 @@
     <div class="logo">
       <img src="https://preview.colorlib.com/theme/aroma/img/logo.png.webp" />
     </div>
-    <div class="navbar">
-      <a>Home</a>
-      <a>Shop</a>
-      <a>Blog</a>
-      <a>Contact</a>
-    </div>
+    <nav class="nav-area">
+      <ul class="nav-list">
+        {% for link in linklists.navigation-menu.links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a>
+          {% if link.links != blank %}
+          <ul class="child">
+            {% for child_link in link.links %}
+            <li><a href="{{ child_link.url }}">{{ child_link.title }}</a>
+              {% if child_link.links != blank %}
+              <ul class="grandchild">
+                {% for grandchild_link in child_link.links %}
+                <li><a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a></li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
     <div class="buy-now">
       <div class="icon">
         {% render 'icon-search.liquid' %}
@@ -67,17 +84,57 @@
 
 }
 
-.navbar{
+.nav-list{
   display:flex;
-  align-items: center;
   gap: 30px;
   font-size:15px;
+  list-style-type: none;
 }
+
+.child{
+  list-style-type: none;
+  position: absolute;
+  display: none;
+  left:550px;
+}
+
+.nav-area ul li a {
+  text-decoration: none;
+  display: block;
+  background: #FFFFFF;
+  color: #222222;
+
+}
+
+.nav-area ul ul li a{
+  background: #FFFFFF;
+  color: "black";
+  padding: 15px 20px;
+  transition: all .4s ease;
+}
+
+.nav-area ul ul li:hover a {
+  background: #384aeb;
+  color: white;
+  transition: all .4s ease;
+}
+
+.nav-area ul li a:hover {
+  color: #384aeb;
+  transition: all .4s ease;
+}
+
+.nav-area ul li:hover>.child {
+  display: block;
+}
+
 
 .logo{
   display: flex;
   align-items: center;
+  cursor:pointer;
 }
+
 
 .buy-now{
   display: flex;
@@ -99,12 +156,6 @@
   border-color: #384aeb;
   transition: all .4s ease;
   cursor: pointer;
-}
-
-a:hover{
-  cursor: pointer;
-  color: #384aeb;
-  transition: all .4s ease;
 }
 
 .icon{
