@@ -1,0 +1,10 @@
+.new-button {
+  display: inline-block;
+  font-family: var(--font-body-family);
+  border: 1px solid #384aeb;
+  border-radius: 30px;
+  color: #222;
+  background: #384aeb;
+  color: #fff;
+  transition: all 0.4s ease;
+}
