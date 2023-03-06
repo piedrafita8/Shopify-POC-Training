@@ -1,5 +1,8 @@
 {
   "sections": {
+    "welcome": {
+      "type": "welcome"
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -212,6 +215,7 @@
     }
   },
   "order": [
+    "welcome",
     "image_banner",
     "rich_text",
     "featured_collection",
