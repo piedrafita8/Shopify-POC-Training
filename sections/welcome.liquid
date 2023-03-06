@@ -1,0 +1,110 @@
+<div class="welcome-section">
+    <div class="welcome-container">
+        <div class="content">
+            <div class="image">
+                <img src={{ section.settings.image_with_text_image}} />
+            </div>
+            <div class="text">
+                <h3>Shop is fun</h3>
+                <h1>BROWSE OUR PREMIUM PRODUCT</h1>
+                <p class="text-3">Us which over of signs divide dominion deep fill bring they're meat beho upon own earth without morning over third.
+                Their male dry. They are great appear whose land fly grass.</p>
+                <button class="new-button browse-button">Browse Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Header",
+    "blocks": [
+    {
+        "type": "home_image",
+        "name": "Home Image",
+        "settings": [
+        {
+
+            "type": "image_picker",
+            "id": "image_with_text_image",
+            "label": "Image"
+
+        }]
+    }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "header",
+        "label": "header"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Header"
+      }
+    ]
+}
+{% endschema %}
+
+{% style %}
+.welcome-section{
+}
+
+.welcome-container{
+
+    max-width: 1440px;
+    margin: auto;
+}
+
+.content{
+text-align: center;
+display: flex;
+justify-content: center;
+gap: 50px;
+padding-top:60px;
+}
+
+.text{
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+}
+
+.text p{
+    max-width:500px;
+    margin: 0px 0px 35px 0px;
+}
+
+.text h1{
+    margin: 0px 0px 25px 0px;
+    font-size: 50px;
+    width:400px;
+    color: black;
+}
+
+.text h3{
+margin: 0px 0px 12px 0px;
+font-size: 30px;
+font-family: "Roboto"
+}
+
+.image img{
+    width: 462px;
+    height: 701px;
+}
+
+.browse-button{
+    width: 170px;
+    height: 50px;
+}
+
+.browse-button:hover{
+transition: all .4s ease;
+cursor: pointer;
+border-color: #384aeb;
+background-color: white;
+color: black;
+}
+{% endstyle %}
