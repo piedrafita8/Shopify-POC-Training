@@ -2,7 +2,7 @@
     <div class="welcome-container">
         <div class="content">
             <div class="image">
-                <img src={{ section.settings.home_image}} />
+                {{ section.settings.home_image | image_url: width: 1500 | image_tag }}
             </div>
             <div class="text">
                 <h3>Shop is fun</h3>
