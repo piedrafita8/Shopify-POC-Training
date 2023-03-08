@@ -1,7 +1,10 @@
 {
   "sections": {
     "welcome": {
-      "type": "welcome"
+      "type": "welcome",
+      "settings": {
+        "home_image": "shopify:\/\/shop_images\/hero-banner_png.webp"
+      }
     },
     "image_banner": {
       "type": "image-banner",
