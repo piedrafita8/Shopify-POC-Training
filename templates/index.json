@@ -6,7 +6,7 @@
         "home_image": "shopify:\/\/shop_images\/hero-banner_png.webp"
       }
     },
-    "swiper": {
+    "trending": {
       "type": "trending",
       "settings": {
       }
