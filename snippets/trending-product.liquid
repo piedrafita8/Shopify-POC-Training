@@ -1,14 +1,14 @@
-<div class="w-fit flex flex-col text-center">
+<div class="w-fit flex flex-col text-center mr-10">
     <div class="w-[255px] h-[272px]">
-        <img src="https://preview.colorlib.com/theme/aroma/img/product/product1.png.webp"></img>
+        <img src="{{ product.featured_media | image_url }}"></img>
     </div>
-<div class="flex flex-col gap-1">
-    <p class="text-[15px] text-grayText">Accesories</p>
-    <h3 class="text-[20px] hover:text-'#007bff' hover:cursor-pointer">Quartz Belts Watch</h3>
-    <p class="text-[15px] text-grayText">$150.00</p>
-</div>
+    <div class="flex flex-col gap-1">
+        <p class="text-[15px] text-grayText">{{ product.type }}</p>
+        <a href="{{ product.url }}">
+            <h3 class="text-[20px] hover:text-'#007bff' hover:cursor-pointer">{{ product.title }}</h3>
+        </a>
+        <p class="text-[15px] text-grayText">{{ product.price | money }}</p>
+    </div>
 
 </div>
-
-
 
