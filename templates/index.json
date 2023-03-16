@@ -9,6 +9,7 @@
     "trending": {
       "type": "trending",
       "settings": {
+        "trending_description": "Popular Item in the market",
         "trending_title": "Trending Products"
       }
     }
