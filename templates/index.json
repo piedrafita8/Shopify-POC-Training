@@ -9,6 +9,7 @@
     "trending": {
       "type": "trending",
       "settings": {
+        "trending_title": ""
       }
     }
   },
