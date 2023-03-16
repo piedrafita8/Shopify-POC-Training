@@ -9,7 +9,7 @@
     "trending": {
       "type": "trending",
       "settings": {
-        "trending_title": ""
+        "trending_title": "Trending Products"
       }
     }
   },
