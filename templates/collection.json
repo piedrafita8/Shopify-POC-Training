@@ -1,8 +1,13 @@
 {
   "sections": {
     "collection-header": {
-        "type": "collection-header"
+      "type": "collection-header",
+      "settings": {
+        "collection-header": "trending-products"
+      }
     }
   },
-  "order": ["collection-header"]
+  "order": [
+    "collection-header"
+  ]
 }

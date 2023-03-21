@@ -14,8 +14,10 @@
         "collection": "trending-products"
       }
     },
-    "winter-sale":{
-      "type": "winter-sale"
+    "winter-sale": {
+      "type": "winter-sale",
+      "settings": {
+      }
     }
   },
   "order": [
