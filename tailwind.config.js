@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     colors:{
       'grayText': '#777777',
-      'primaryPurple': '#007bff'
+      'primaryPurple': '#007bff',
+      'winter': '#95c2d5'
     },
     extend: {},
   },
