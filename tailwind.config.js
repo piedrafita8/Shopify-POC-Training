@@ -5,7 +5,8 @@ module.exports = {
     colors:{
       'grayText': '#777777',
       'primaryPurple': '#007bff',
-      'winter': '#95c2d5'
+      'winter': '#95c2d5',
+      'collection': '#f1f6f7'
     },
     extend: {},
   },
