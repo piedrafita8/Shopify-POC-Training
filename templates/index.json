@@ -13,10 +13,14 @@
         "trending_title": "Trending Products",
         "collection": "trending-products"
       }
+    },
+    "winter-sale":{
+      "type": "winter-sale"
     }
   },
   "order": [
     "welcome",
-    "trending"
+    "trending",
+    "winter-sale"
   ]
 }
