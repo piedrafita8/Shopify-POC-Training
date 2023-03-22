@@ -3,7 +3,7 @@
     <h3 class="text-[36px] font-semibold mb-10">Up to 50% Off</h3>
     <h3 class="text-[30px] font-semibold mb-3">Winter Sale</h3>
     <p class="text-[15px] mb-12">Him she'd let them sixth saw light</p>
-    <button class="new-button browse-button">Browse Now</button>
+    <button class="new-button browse-button" href="{{section.settings.collection-winter.url}}">Browse Now</button>
 </div>
 
 {% schema %}
@@ -14,6 +14,11 @@
 "type": "text",
 "id": "winter-sale_title",
 "label": "Winter Sale Title"
+},
+{
+"type": "collection",
+"id": "collection-winter",
+"label": "Collection Winter"
 }
 ],
 "presets": [
