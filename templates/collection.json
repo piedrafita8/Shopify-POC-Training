@@ -5,9 +5,13 @@
       "settings": {
         "collection-header": "trending-products"
       }
+    },
+    "collection-grid":{
+        "type": "collection-grid"
     }
   },
   "order": [
-    "collection-header"
+    "collection-header",
+    "collection-grid"
   ]
 }
