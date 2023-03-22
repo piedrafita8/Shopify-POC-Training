@@ -1,0 +1,23 @@
+<div class="grid grid-cols-3 gap-0">
+    {% for product in collection.products %}
+        {% render 'collection-card', product:product %}
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+"name": "Collection Grid Section",
+"settings": [
+{
+"type": "text",
+"id": "collection_grid",
+"label": "Collection Grid"
+}
+],
+"presets": [
+{
+"name": "Collection Grid Settings"
+}
+]
+}
+{% endschema %}
