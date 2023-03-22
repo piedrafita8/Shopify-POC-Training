@@ -6,8 +6,10 @@
         "collection-header": "trending-products"
       }
     },
-    "collection-grid":{
-        "type": "collection-grid"
+    "collection-grid": {
+      "type": "collection-grid",
+      "settings": {
+      }
     }
   },
   "order": [

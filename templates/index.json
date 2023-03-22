@@ -17,6 +17,8 @@
     "winter-sale": {
       "type": "winter-sale",
       "settings": {
+        "winter-sale_title": "",
+        "collection-winter": "winter-collection"
       }
     }
   },
