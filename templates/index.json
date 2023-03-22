@@ -3,7 +3,8 @@
     "welcome": {
       "type": "welcome",
       "settings": {
-        "home_image": "shopify:\/\/shop_images\/hero-banner_png.webp"
+        "home_image": "shopify:\/\/shop_images\/hero-banner_png.webp",
+        "collection": "all-products"
       }
     },
     "trending": {
