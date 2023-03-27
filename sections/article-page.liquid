@@ -1,0 +1,48 @@
+<div class="max-w-screen-2xl w-fit m-auto">
+
+    <div class="flex gap-8 items-center mb-20">
+
+        <div>
+            <img class="w-[550px] h-[580px]" src="{{ product.featured_media | image_url }}" alt="">
+        </div>
+        <div class="flex flex-col gap-5 w-[460px]">
+            <h1 class="text-[24px] font-bold">{{ product.title }}</h1>
+            <p class="text-[24px] font-bold text-primaryPurple">{{ product.price | money }}</p>
+            <p>Category: {{ product.type }}</p>
+            <p>Availavility: {{ product.available }}</p>
+            <div class="border-y py-6">
+                <p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for something that can
+                make your interior look awesome, and at the same time give you the pleasant warm feeling during the winter.</p>
+            </div>
+
+            <div class="flex items-center">
+
+                <p>Quantity: </p>
+                <input type="text" class="input-text rounded-sm w-[80px] border-2 mx-4 pl-[55px] h-10" value="1">
+                <button class="new-button browse-button py-5 px-20">Add to Cart</button>
+
+            </div>
+            
+        </div>
+    </div>
+    
+
+</div>
+
+{% schema %}
+{
+    "name": "Article Page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "article_page",
+        "label": "Article Page"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Article Page Settings"
+      }
+    ]
+}
+{% endschema %}
