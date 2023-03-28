@@ -18,10 +18,17 @@
             <div class="flex items-center">
 
                 <p>Quantity: </p>
-                <input type="text" class="input-text rounded-sm w-[80px] border-2 mx-4 pl-[55px] h-10" value="1">
-                <button class="new-button browse-button py-5 px-20">Add to Cart</button>
+
+                {% form 'product', product %}
+                    
+                    <input type="hidden" class="idvariant" name="id" id="idVariantProduct"
+                    value="{{ product.selected_or_first_available_variant.id }}">
+                    <input type="number" name="quantity" id="quantity" min="1" value="1" class="input-text rounded-sm w-[80px] border-2 mx-4 pl-[50px] h-10">
+                    <button type="submit" class="browse-button py-5 px-20">Add to cart</button>
+                {% endform %}
 
             </div>
+
             
         </div>
     </div>
