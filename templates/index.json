@@ -4,7 +4,7 @@
       "type": "welcome",
       "settings": {
         "home_image": "shopify:\/\/shop_images\/hero-banner_png.webp",
-        "collection": "all-products"
+        "collection-home": ""
       }
     },
     "trending": {
@@ -21,11 +21,20 @@
         "winter-sale_title": "",
         "collection-winter": "winter-collection"
       }
+    },
+    "997d94e4-6909-494b-9c1d-1bafbde59799": {
+      "type": "trending",
+      "settings": {
+        "trending_description": "Popular sellers in the market",
+        "trending_title": "Best Sellers",
+        "collection": "best-sellers"
+      }
     }
   },
   "order": [
     "welcome",
     "trending",
-    "winter-sale"
+    "winter-sale",
+    "997d94e4-6909-494b-9c1d-1bafbde59799"
   ]
 }
