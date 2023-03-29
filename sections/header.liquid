@@ -1,7 +1,7 @@
 <div class="header-container">
   <div class="header-content">
     <div class="logo">
-      <img src="https://preview.colorlib.com/theme/aroma/img/logo.png.webp" />
+      <a href="/"><img src="https://preview.colorlib.com/theme/aroma/img/logo.png.webp" /></a>
     </div>
     <nav class="nav-area">
       <ul class="nav-list">
@@ -28,13 +28,11 @@
     </nav>
     <div class="buy-now">
       <div class="icon">
-        {% render 'icon-search.liquid' %}
-      </div>
-      <div class="icon">
-        {% render 'icon-cart.liquid' %}
+        <a href="/cart">{% render 'icon-cart.liquid' %}</a>
       </div>
 
-      <button class="new-button button-header">Buy Now</button>
+      <a href="{{section.settings.collection-header.url}}"><button class="new-button button-header">Buy Now</button></a>
+      
     </div>
   </div>
 </div>
