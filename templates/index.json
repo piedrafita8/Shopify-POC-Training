@@ -4,7 +4,7 @@
       "type": "welcome",
       "settings": {
         "home_image": "shopify:\/\/shop_images\/hero-banner_png.webp",
-        "collection-home": ""
+        "collection-home": "all-products"
       }
     },
     "trending": {
