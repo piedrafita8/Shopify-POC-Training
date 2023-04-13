@@ -15,15 +15,6 @@
       </p>
       <p>Category: {{ product.type }}</p>
       <p>Availavility: {{ product.available }}</p>
-      <select id="product-select" name="id">
-        {% for variant in product.variants %}
-          <option value="{{ variant.id }}"
-            {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
-          >
-            {{ variant.title }} - {{ variant.price | money }}
-          </option>
-  {% endfor %}
-</select>
 
       <div class="border-y py-6">
         <p>
@@ -35,16 +26,20 @@
       </div>
 
       <div class="flex items-center">
-        <p>Quantity:</p>
 
         {% form 'product', product %}
 
-        <input
-          type="hidden"
-          class="idvariant"
-          name="id"
-          id="idVariantProduct"
-          value="{{ product.selected_or_first_available_variant.id }}" />
+        <select id="product-select" name="id">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}"
+              {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+            >
+              {{ variant.title }} - {{ variant.price | money }}
+            </option>
+          {% endfor %}
+        </select>
+
+  
         <input
           type="number"
           name="quantity"
@@ -64,3 +59,17 @@
 {% schema %} { "name": "Article Page", "settings": [ { "type": "text", "id":
 "article_page", "label": "Article Page" } ], "presets": [ { "name": "Article
 Page Settings" } ] } {% endschema %}
+
+<script type="text/javascript">
+
+  var selectCallback = function(variant, selector) {
+  console.log(variant)
+}
+
+new Shopify.OptionSelectors('product-select', {
+  product: {{ product | json }},
+  onVariantSelected: selectCallback,
+  enableHistoryState: true
+});
+
+</script>
