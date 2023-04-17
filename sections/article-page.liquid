@@ -4,25 +4,30 @@
   <div class="flex gap-8 items-center mb-20">
     <div>
       <img
+      id="product-image"
         class="w-[550px] h-[580px]"
         src="{{ product.featured_media | image_url }}"
         alt="" />
     </div>
     <div class="flex flex-col gap-5 w-[460px]">
       <h1 class="text-[24px] font-bold">{{ product.title }}</h1>
-      <p class="text-[24px] font-bold text-primaryPurple">
+      <h3 id="variant-title"></h3>
+      <p class="text-[24px] font-bold text-primaryPurple" id="variant-price">
         {{ product.price | money }}
       </p>
       <p>Category: {{ product.type }}</p>
       <p>Availavility: {{ product.available }}</p>
 
       <div class="border-y py-6">
+        <p class="hidden" id="test">{{product | json}}</p>
         <p>
+
           Mill Oil is an innovative oil filled radiator with the most modern
           technology. If you are looking for something that can make your
           interior look awesome, and at the same time give you the pleasant warm
-          feeling during the winter.
+          feeling during the winter
         </p>
+        
       </div>
 
       <div class="flex items-center">
@@ -56,20 +61,44 @@
   </div>
 </div>
 
-{% schema %} { "name": "Article Page", "settings": [ { "type": "text", "id":
-"article_page", "label": "Article Page" } ], "presets": [ { "name": "Article
-Page Settings" } ] } {% endschema %}
-
-<script type="text/javascript">
-
-  var selectCallback = function(variant, selector) {
-  console.log(variant)
+{% schema %}
+{
+"name": "Article Page",
+"settings": [
+{
+"type": "text",
+"id": "article-page",
+"label": "Article Page"
 }
+],
+"presets": [
+{
+"name": "Article Page Settings"
+}
+]
+}
+{% endschema %}
 
-new Shopify.OptionSelectors('product-select', {
-  product: {{ product | json }},
-  onVariantSelected: selectCallback,
-  enableHistoryState: true
+<script>
+
+
+  var selectCallback = function (variant, selector) {
+    document.querySelector("#product-image").setAttribute("src", variant?.featured_image?.src);
+
+    document.getElementById("variant-title").innerHTML = variant.title;
+
+    document.getElementById("variant-price").innerHTML = Shopify.formatMoney(variant.price, '{{amount}}');
+
+  }
+
+  new Shopify.OptionSelectors('product-select', {
+      product: {{ product | json }},
+      onVariantSelected: selectCallback,
+      enableHistoryState: true
 });
 
+
+
+
 </script>
+
